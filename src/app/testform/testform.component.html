@@ -1,0 +1,17 @@
+<p>testform works!</p>
+Name:<input type="text" [(ngModel)]="Name">
+<br>
+Phone:<input type="text" [(ngModel)]="Phone">
+<br>
+adress:<input type="text" [(ngModel)]="adress">
+<br>
+email：<input type="text" [(ngModel)]="email">
+<br>
+<button (click)="checker()">save & display</button>
+<br>
+<div>
+    {{formName}}
+    {{formPhone}}
+    {{formadress}}
+    {{formemail}}
+</div>

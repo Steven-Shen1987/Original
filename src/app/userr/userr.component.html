@@ -1,0 +1,13 @@
+<p>userr works!</p>
+
+<input type="text" [(ngModel)]="myName">
+<br>
+<button (click)="checker()">Check name</button>
+<br>
+{{user1}}
+<div *ngFor="let data of list">
+{{data.id}} {{data.title}}
+</div>
+<div *ngIf="errorMessage">
+    {{errorMessage}} 
+    </div>
