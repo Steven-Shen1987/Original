@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { CommonModule } from '@angular/common';  
 import { UserrComponent } from './userr/userr.component';
 import { FormsModule } from '@angular/forms';
 import { TestformComponent } from './testform/testform.component';
@@ -18,7 +18,8 @@ import { TestformComponent } from './testform/testform.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
