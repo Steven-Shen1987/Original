@@ -1,35 +1,42 @@
-
 <div class="container">
-    <div class="" style="max-width: 500px;">
-        <form #form="ngForm" (ngSubmit)="onSubmit(form.form)">
+    <div class="" style="max-width: 1500px;">
+        <div style="text-align:center;display: flex;overflow-x:auto;justify-content:center;">
+            <div>id </div>
+            <div> name </div>
+            <div> email </div>
+        </div>
+        <div *ngFor="let data of list;" class="s">
+            <form #form="ngForm"  style="text-align:center;display: flex;overflow-x:auto;justify-content:center;">
+                <div class="form-group">
+                    <input class="form-control" name="id" type='text' [(ngModel)]="data.id">
+                </div>
 
+                <div class="form-group">
+                    <input class="form-control" name="name" type='text' [(ngModel)]="data.name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="email" type='text' [(ngModel)]="data.email">
+                </div>
+
+                <button type="submit" value="Send" (click)="saveFunction(form.form.value)">save</button>
+                <button  type="submit" value="Send" (click)="deteleFunction(form.form.value.id)">delete</button>
+            </form>
+        </div>
+        <form  style="text-align:center;display: flex;overflow-x:auto;justify-content:center;">
             <div class="form-group">
-                <input class="form-control" minlength="8" maxlength="12" required name="title" type='text' [(ngModel)]="form.title">
+                <input class="form-control"  type='text' >
             </div>
 
             <div class="form-group">
-                <input class="form-control" required  name="body" type='text' [(ngModel)]="form.body">
+                <input class="form-control"  type='text' >
+            </div>
+            <div class="form-group">
+                <input class="form-control"  type='text' >
             </div>
 
-            <button type="submit" value="Send">submit</button>
+            <!-- <button type="submit" value="Send" (click)="insertFunction(form.form.value)">insert</button> -->
         </form>
+        
     </div>
 
-
-
-<br>
-    <div *ngIf="display">
-        {{display.title}}
-        {{display.body}}
-
-
-    </div>
-    <br><br>
-
-    <div *ngIf="!form.valid && form.dirty">
-        <div class="text-danger">Form is invalid</div>
-    </div>
-    <div *ngFor="let data of list" class="s">
-       {{data.id}}, {{data.title}} , {{data.body}} <br><br>
-    </div>
 </div>
