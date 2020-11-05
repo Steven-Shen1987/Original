@@ -28,8 +28,8 @@ export class TestformComponent implements OnInit {
   }
   getApi() {
     this.http.get("https://jsonplaceholder.typicode.com/comments").subscribe(
-      (res) => {
-        console.log(res), this.list = res
+      (res: Array<any>) => {
+        console.log(res), this.list = res.slice(0, 50)
 
       },
       (err) => { console.warn(err) }
@@ -50,30 +50,27 @@ export class TestformComponent implements OnInit {
 
 
   saveFunction(data) {
-    
-    for (var i = 0; i < this.list.length; i++) {
-      if (this.list[i]["id"] == data.id) {
-        this.list.splice(i, 1, data);
-        i--;
+
+    for (let item of this.list) {
+      if (item.id == data.id) {
+        item = data
+
       }
     }
     console.log(this.list)
   }
 
   insertFunction(data) {
-    for (var i = 0; i < this.list.length; i++) {
-      if (this.list[i]["id"] == data.id) {
-        this.list.splice(i, 1, data);
-        i--;
-      }
-    }
+
+    this.list.push(data);
+
     console.log(this.list)
   }
 
 
 
 
-  deteleFunction(id) {
+  deleteFunction(id) {
     console.log(id)
 
     for (var i = 0; i < this.list.length; i++) {

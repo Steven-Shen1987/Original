@@ -1,0 +1,11 @@
+<p>test works!</p>
+<!-- <input [formControl]="name">
+<input [formControl]="angForm.controls.name">
+<input [formControl]="angForm.controls.age">
+<input [formControl]="angForm.controls.college"> -->
+<div *ngFor="let form of transportForms.controls">
+    <input [formControl]="form.controls.name">
+    <input [formControl]="form.controls.age">
+    <input [formControl]="form.controls.college">
+</div>
+<button (click)="Function123()">delete</button>
